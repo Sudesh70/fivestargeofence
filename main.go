@@ -423,8 +423,8 @@ func generateEmailBody(reports []EventReport, deviceMap map[int]Device) string {
 func sendEmail(csvFile, emailBody string) {
 	m := mail.NewMessage()
 	m.SetAddressHeader("From", "info@suntrack.com.au", "SunTrack-GPS Geofence Report")
-	//m.SetHeader("To", "asankagmr@gmail.com")
-	m.SetHeader("To", "malien.n@sunru.com.au")
+	m.SetHeader("To", "ausparcels@gmail.com")
+	m.SetHeader("Cc", "malien.n@sunru.com.au", "asankagmr@gmail.com")
 	m.SetHeader("Subject", "Daily Geofence Entry/Exit Report")
 	m.SetBody("text/html", emailBody)
 	m.Attach(csvFile)
