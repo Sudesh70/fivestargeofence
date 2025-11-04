@@ -35,12 +35,12 @@ type DeviceEventSummary struct {
 }
 
 func main() {
-	loginURL := "https://vts.suntrack.com.au/api/session"
-	deviceURL := "https://vts.suntrack.com.au/api/devices"
-	reportURL := "https://vts.suntrack.com.au/api/reports/events"
+	loginURL := "https://fivestaralliance.com.au/api/session"
+	deviceURL := "https://fivestaralliance.com.au/api/devices"
+	reportURL := "https://fivestaralliance.com.au/api/reports/events"
 
-	username := "ausparcels@gmail.com"
-	password := "Five*2025"
+	username := "portal@fivestaralliance.com.au"
+	password := "five5star@25"
 
 	sessionCookie, err := authenticate(loginURL, username, password)
 	if err != nil {
@@ -178,7 +178,7 @@ func fetchEventReports(apiURL string, sessionCookie *http.Cookie) ([]EventReport
 	params.Add("type", "geofenceEnter")
 	params.Add("type", "geofenceExit")
 
-	groupIDs := []string{"45"}
+	groupIDs := []string{"1"}
 	for _, gid := range groupIDs {
 		params.Add("groupId", gid)
 	}
